@@ -10,7 +10,13 @@ export class TransactionService {
 
   public getList():Observable<Array<any>> {
     return this.http.get(API_URL)
-      .map((res:Response) => res.json().transactions)
+      .map((res:Response) => res.json())
+      .map(doc => doc.transactions
+        .map(transaction => {
+          transaction.amount = parseInt(transaction.amount)
+          return transaction;
+        })
+      )
       .catch((err:Response) => this.handleErrors(err))
   }
 
