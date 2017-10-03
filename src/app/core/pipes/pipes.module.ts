@@ -1,18 +1,18 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 
-import { pipes } from './pipes';
+import { TransactionAttachmentPipe } from './transaction.pipe';
 
 @NgModule({
   declarations: [
-    ...pipes,
+    TransactionAttachmentPipe,
   ],
   imports: [
-    
+
   ],
   providers: [
   ],
   exports: [
-    ...pipes
+    TransactionAttachmentPipe
   ],
   schemas: [NO_ERRORS_SCHEMA],
 })
