@@ -1,5 +1,30 @@
-<h1>List transactions</h1>
-<h2 *ngIf="!loaded">Loading ....</h2>
-<ul *ngIf="loaded">
-  <li *ngFor="let transaction of transactions">{{ transaction.counterparty_name }}</li>
-</ul>
+<div class="transactions">
+  <h1>List transactions</h1>
+  <h2 *ngIf="!loaded">Loading ....</h2>
+  <table  *ngIf="loaded" class="table">
+    <thead>
+      <tr>
+        <th (click)="sort()" class="header-sortable">
+          Created at <i class="glyphicon" [class.glyphicon-arrow-up]="!sortAsc" [class.glyphicon-arrow-down]="sortAsc"></i></th>
+        <th>Counterparty Name</th>
+        <th>Payment type</th>
+        <th>Amount</th>
+        <th><i class="glyphicon glyphicon-paperclip"></i></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of transactions">
+        <td>{{ transaction.created_at | date:"dd-MM-yyyy" }}</td>
+        <td>{{ transaction.counterparty_name }}</td>
+        <td>{{ transaction.operation_type }}</td>
+        <td class="amount">{{ transaction.amount }}
+          <i class="glyphicon" [class.glyphicon-arrow-up]="transaction.amount > 0" [class.glyphicon-arrow-down]="transaction.amount < 0"></i>
+        </td>
+        <td>
+          {{ transaction.attachements | attachment}}
+          <i class="glyphicon glyphicon-paperclip"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
