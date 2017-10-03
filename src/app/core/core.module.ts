@@ -3,16 +3,19 @@ import { RouterModule } from '@angular/router';
 
 import { APP_SERVICES } from './services';
 import { NavComponent } from './components/nav/nav.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 @NgModule({
   imports: [
     RouterModule,
   ],
   declarations: [
-    NavComponent
+    NavComponent,
+    LayoutComponent
   ],
   exports: [
-    NavComponent
+    NavComponent,
+    LayoutComponent
   ],
   providers: [
     ...APP_SERVICES
