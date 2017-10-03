@@ -1,0 +1,19 @@
+.transactions {
+
+}
+
+.transactions .header-sortable {
+    cursor: pointer;
+}
+
+.transactions .header-sortable i {
+    color: #b58900;
+}
+
+.transactions .amount i.glyphicon-arrow-up {
+    color: #2b81af;
+}
+
+.transactions .amount i.glyphicon-arrow-down {
+    color: red;
+}
