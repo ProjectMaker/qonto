@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
+import { APP_SERVICES } from './services';
 import { NavComponent } from './components/nav/nav.component';
 
 @NgModule({
@@ -14,7 +15,7 @@ import { NavComponent } from './components/nav/nav.component';
     NavComponent
   ],
   providers: [
-
+    ...APP_SERVICES
   ]
 })
 export class CoreModule {}
