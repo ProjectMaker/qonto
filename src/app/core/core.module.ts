@@ -2,19 +2,18 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { APP_SERVICES } from './services';
-import { NavComponent } from './components/nav/nav.component';
+import { PipeModule } from './pipes/pipes.module';
 import { LayoutComponent } from './components/layout/layout.component';
 
 @NgModule({
   imports: [
     RouterModule,
+    PipeModule,
   ],
   declarations: [
-    NavComponent,
     LayoutComponent
   ],
   exports: [
-    NavComponent,
     LayoutComponent
   ],
   providers: [
